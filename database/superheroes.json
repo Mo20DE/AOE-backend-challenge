@@ -1,0 +1,243 @@
+[
+    {
+        "name": "superman",
+        "identity": {
+            "firstName": "clark",
+            "lastName": "kent"
+        },
+        "birthday": "1977-04-18",
+        "superpowers": [
+            "strength",
+            "speed",
+            "flight",
+            "invulnerability"
+        ]
+    },
+    {
+        "name": "deadpool",
+        "identity": {
+            "firstName": "wade",
+            "lastName": "wilson"
+        },
+        "birthday": "1973-11-22",
+        "superpowers": [
+            "healing"
+        ]
+    },
+    {
+        "name": "batman",
+        "identity": {
+            "firstName": "bruce",
+            "lastName": "wayne"
+        },
+        "birthday": "1915-04-17",
+        "superpowers": []
+    },
+    {
+        "name": "aquaman",
+        "identity": {
+            "firstName": "arthur",
+            "lastName": "curry"
+        },
+        "birthday": "1986-01-29",
+        "superpowers": [
+            "strength",
+            "healing"
+        ]
+    },
+    {
+        "name": "wonder woman",
+        "identity": {
+            "firstName": "diana",
+            "lastName": "prince"
+        },
+        "birthday": "0000-01-01",
+        "superpowers": [
+            "strength",
+            "speed",
+            "flight",
+            "invulnerability"
+        ]
+    },
+    {
+        "name": "flash",
+        "identity": {
+            "firstName": "barry",
+            "lastName": "allen"
+        },
+        "birthday": "1980-03-14",
+        "superpowers": [
+            "speed"
+        ]
+    },
+    {
+        "name": "green lantern",
+        "identity": {
+            "firstName": "hal",
+            "lastName": "jordan"
+        },
+        "birthday": "1981-02-20",
+        "superpowers": [
+            "flight"
+        ]
+    },
+    {
+        "name": "green arrow",
+        "identity": {
+            "firstName": "oliver",
+            "lastName": "queen"
+        },
+        "birthday": "1985-06-07",
+        "superpowers": []
+    },
+    {
+        "name": "cyborg",
+        "identity": {
+            "firstName": "victor",
+            "lastName": "stone"
+        },
+        "birthday": "1990-05-29",
+        "superpowers": [
+            "strength",
+            "healing"
+        ]
+    },
+    {
+        "name": "shazam",
+        "identity": {
+            "firstName": "billy",
+            "lastName": "batson"
+        },
+        "birthday": "2005-12-15",
+        "superpowers": [
+            "strength",
+            "speed",
+            "flight"
+        ]
+    },
+    {
+        "name": "martian manhunter",
+        "identity": {
+            "firstName": "jonn",
+            "lastName": "jonzz"
+        },
+        "birthday": "3000-12-10",
+        "superpowers": [
+            "strength",
+            "flight"
+        ]
+    },
+    {
+        "name": "hawkman",
+        "identity": {
+            "firstName": "katar",
+            "lastName": "hol"
+        },
+        "birthday": "1985-10-18",
+        "superpowers": [
+            "strength",
+            "flight"
+        ]
+    },
+    {
+        "name": "black canary",
+        "identity": {
+            "firstName": "dinah",
+            "lastName": "lance"
+        },
+        "birthday": "1988-02-01",
+        "superpowers": [
+            "strength"
+        ]
+    },
+    {
+        "name": "catwoman",
+        "identity": {
+            "firstName": "selina",
+            "lastName": "kyle"
+        },
+        "birthday": "1980-06-12",
+        "superpowers": []
+    },
+    {
+        "name": "joker",
+        "identity": {
+            "firstName": "unknown",
+            "lastName": "unknown"
+        },
+        "birthday": "unknown",
+        "superpowers": []
+    },
+    {
+        "name": "lex luthor",
+        "identity": {
+            "firstName": "lex",
+            "lastName": "luthor"
+        },
+        "birthday": "1980-12-14",
+        "superpowers": []
+    },
+    {
+        "name": "ragman",
+        "identity": {
+            "firstName": "rory",
+            "lastName": "regan"
+        },
+        "birthday": "1982-05-18",
+        "superpowers": [
+            "strength",
+            "healing"
+        ]
+    },
+    {
+        "name": "blue beetle",
+        "identity": {
+            "firstName": "jaime",
+            "lastName": "reyes"
+        },
+        "birthday": "1992-08-21",
+        "superpowers": [
+            "strength",
+            "flight"
+        ]
+    },
+    {
+        "name": "firestorm",
+        "identity": {
+            "firstName": "ronnie",
+            "lastName": "raymond"
+        },
+        "birthday": "1993-07-01",
+        "superpowers": [
+            "strength",
+            "healing"
+        ]
+    },
+    {
+        "name": "test",
+        "identity": {
+            "firstName": "hello",
+            "lastName": "world"
+        },
+        "birthday": "1986-01-29",
+        "superpowers": [
+            "flight",
+            "invulnerability"
+        ]
+    },
+    {
+        "name": "ok",
+        "identity": {
+            "firstName": "my",
+            "lastName": "name"
+        },
+        "birthday": "1986-01-29",
+        "superpowers": [
+            "strength",
+            "speed",
+            "flight",
+            "invulnerability",
+            "healing"
+        ]
+    }
+]
