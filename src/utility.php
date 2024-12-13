@@ -44,7 +44,7 @@ function filterSuperpowers(array $params) {
 
 /** 
  *    /-- Task 2.2 --/
- *    Filters Superheroes by their superpowers.
+ *    Filters Superheroes by their Superpowers.
  */
 function selectSuperheroes(array $superhero_data, array $superpower_params, bool $encrypt, int $key) {
     $filtered_superheroes = array();

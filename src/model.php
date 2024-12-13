@@ -2,7 +2,7 @@
 include 'encrypt.php';
 /** 
  *    /-- Task 2.2 --/
- *    Models for Supehero.
+ *    Model for Supehero.
  */
 class SuperHero {
 
