@@ -1,7 +1,7 @@
 
 let current_active_section = 'get';
-const endpoint_url = 'webservices/rest-api.php?';
-const all_superpowers = ["strength", "speed", "flight", "invulnerability", "healing"];
+const endpoint_url = '../backend/src/rest-api.php?';
+const all_superpowers = ['strength', 'speed', 'flight', 'invulnerability', 'healing'];
 
 hideSectionElements = () => {
     document.querySelectorAll('.section-content').forEach((section) => {
@@ -10,7 +10,7 @@ hideSectionElements = () => {
 }
 
 hideSectionElements();
-document.querySelectorAll('.get-section').forEach((e) => e.style.display = 'block'); // set default section
+document.querySelector('.get-section').style.display = 'flex'; // set default section
 
 document.querySelectorAll('input[name="http-methods"]').forEach((btn) => {
     btn.addEventListener('change', function() {
@@ -18,7 +18,7 @@ document.querySelectorAll('input[name="http-methods"]').forEach((btn) => {
         current_active_section = this.value.toLowerCase();
         const selectedContent = document.querySelector(`.${current_active_section}-section`);
         if (selectedContent) {
-            selectedContent.style.display = 'block';
+            selectedContent.style.display = 'flex';
         }
     })
 });
@@ -39,21 +39,23 @@ document.getElementById('submit-button').addEventListener('click', () => {
     if (current_active_section === 'get') {
 
         let superpower_checkboxes = document.querySelector('input[class="filters"]:checked');
-        if (superpower_checkboxes != null) {
+        const form = document.querySelector('#get-form');
+        const formData = new FormData(form);
+        
+        let url = endpoint_url ;
+        if (superpower_checkboxes === null) url += "all=on&";
+        url += new URLSearchParams(formData).toString();
 
-            const form = document.querySelector('#get-form');
-            const formData = new FormData(form);
-            const url = endpoint_url + new URLSearchParams(formData).toString();
-
-            let xhr = new XMLHttpRequest();
-            xhr.onload = () => {
-                let response = xhr.responseText.replace(/\n/g, '<br>');
-                document.querySelector('#result').innerHTML = response;
-            };
-            xhr.open('GET', url);
-            xhr.send();
-        }
-        else alert('Please select at least one Superpower');
+        let xhr = new XMLHttpRequest();
+        xhr.onload = () => {
+            window.scrollTo({'top': document.body.scrollHeight, 'behavior': 'smooth'});
+            let result_container =  document.getElementById('result');
+            result_container.style.display = 'flex';
+            let response = xhr.responseText.replace(/\n/g, '<br>');
+            result_container.innerHTML = response;
+        };
+        xhr.open('GET', url);
+        xhr.send();
     }
     else if (current_active_section === 'post') {
 
@@ -83,8 +85,11 @@ document.getElementById('submit-button').addEventListener('click', () => {
                 });
 
                 let xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = () => {
-                    document.getElementById('result').innerHTML = xhr.responseText;
+                xhr.onload = () => {
+                    window.scrollTo({'top': document.body.scrollHeight, 'behavior': 'smooth'});
+                    let result_container =  document.getElementById('result');
+                    result_container.style.display = 'flex';
+                    result_container.innerHTML = xhr.responseText;
                 }
 
                 let data = JSON.stringify({
@@ -100,7 +105,7 @@ document.getElementById('submit-button').addEventListener('click', () => {
                 xhr.open('POST', endpoint_url);
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.send(data);
-                document.getElementById("post-form").reset();
+                document.getElementById('post-form').reset();
             }
             else alert('Please select at least one Superpower');
         }

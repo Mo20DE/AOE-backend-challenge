@@ -1,7 +1,10 @@
 <?php
-include "model.php";
-// Accepted Superpowers by DeeSee
-$superpowers = array("strength", "speed", "flight", "invulnerability", "healing");
+
+require_once "encrypt.php";
+require_once "Superhero.php";
+
+$superpowers = array("strength", "speed", "flight", "invulnerability", "healing"); // Accepted superpowers by DeeSee
+$json_keys = array("name", "identity", "birthday", "superpowers");
 
 // utility function to load a file
 function loadSuperheroesDatabase(string $filename) {
@@ -33,7 +36,8 @@ function checkParam($method, $param) {
     return filter_var($param, FILTER_VALIDATE_BOOL);
 }
 
-function filterSuperpowers(array $params) {
+// based on GET parameters selects from available superpowers
+function getRequiredSuperpowers(array $params) {
     global $superpowers;
     return array_values(array_filter(
         $superpowers, function($item, $idx) use ($params) {
@@ -44,24 +48,20 @@ function filterSuperpowers(array $params) {
 
 /** 
  *    /-- Task 2.2 --/
- *    Filters Superheroes by their superpowers.
+ *    Filters Superheroes by specified superpowers.
  */
 function selectSuperheroes(array $superhero_data, array $superpower_params, bool $encrypt, int $key) {
     $filtered_superheroes = array();
-    $filtered_superpowers = filterSuperpowers($superpower_params);
+    $filtered_superpowers = getRequiredSuperpowers($superpower_params);
     foreach ($superhero_data as $hero) {
-        if ($hero->hasSomeGivenSuperpowers($filtered_superpowers)) {
-            $filtered_superheroes[] = $hero->getFullName($encrypt, $key);
+        if ($hero->hasGivenSuperpowers($filtered_superpowers)) {
+            $filtered_superheroes[] = $encrypt ? deeSeeChiffre($hero->getFullName(), $key) : $hero->getFullName();
         }
     }
     return $filtered_superheroes;
 }
 
-function isLowerCaseWithSpaces($word) {
-    return preg_match('/^[a-z ]+$/', $word) === 1;
-}
-
-function storeSuperheroInDatabase(string $database_path) {
-    
+function isValidString(string $str) {
+    return is_string($str) && trim($str) !== "" && preg_match('/^[a-z ]+$/', $str) === 1;
 }
 ?>

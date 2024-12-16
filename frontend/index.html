@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
-        <link rel="stylesheet" href="src/styles.css">
+        <link rel="stylesheet" href="styles.css">
         <title>DeeSee Heroes System</title>
     </head>
     <body>
@@ -18,32 +18,27 @@
                     <label for="get">GET</label>
                     <input type="radio" id="post" name="http-methods" value="POST">
                     <label for="post">POST</label>
-                    <!-- <input type="radio" id="put" name="http-methods" value="PUT">
-                    <label for="put">PUT</label>
-                    <input type="radio" id="delete" name="http-methods" value="DELETE">
-                    <label for="delete">DELETE</label> -->
                 </form>
             </section>
             
             <section class="section-content get-section ">
-            <!-- action="webservices/rest-api.php" method="GET" -->
                 <form id="get-form">
                     <span>Select Filters:</span>
-                    <input type="checkbox" id="opt1" name="str" class="filters" checked>
+                    <input type="checkbox" id="opt1" name="str" class="filters">
                     <label for="opt1">Strength</label>
-                    <input type="checkbox" id="opt2" name="spd" class="filters" checked>
+                    <input type="checkbox" id="opt2" name="spd" class="filters">
                     <label for="opt2">Speed</label>
-                    <input type="checkbox" id="opt3" name="fly" class="filters" checked>
+                    <input type="checkbox" id="opt3" name="fly" class="filters">
                     <label for="opt3">Flight</label>
-                    <input type="checkbox" id="opt4" name="invul" class="filters" checked>
+                    <input type="checkbox" id="opt4" name="invul" class="filters">
                     <label for="opt4">Invulnerability</label>
-                    <input type="checkbox" id="opt5" name="heal" class="filters" checked>
+                    <input type="checkbox" id="opt5" name="heal" class="filters">
                     <label for="opt5">Healing</label> <br><br><br><br>
 
                     <span>Use DeeSee-Encryption:</span>
-                    <input type="radio" id="no" name="enc" value="off">
+                    <input type="radio" id="no" name="enc" value="off" checked>
                     <label for="no">No</label>
-                    <input type="radio" id="yes" name="enc" value="on" checked>
+                    <input type="radio" id="yes" name="enc" value="on">
                     <label for="yes">Yes</label> 
 
                     <span id="key-span">Key:</span>
@@ -53,7 +48,7 @@
 
             <section class="section-content post-section ">
                 <form id="post-form">
-                    <h2>Create new Superhero:</h2>
+                    <h2>Create new Superhero</h2>
                     <span>Name: </span>
                     <input type="text" id="nm" name="nm" class="input" placeholder="aquaman" required> <br><br>
                     <span>First Name:</span>
@@ -61,7 +56,7 @@
                     <span>Last Name:</span>
                     <input type="text" id="ln" name="ln" class="input" placeholder="curry" required> <br><br>
                     <span>Date of Birth:</span>
-                    <input type="date" id="dob" name="dob" value="1986-01-29" required> <br><br>
+                    <input type="date" id="dob" name="dob" value="1986-01-29" required> <br><br><br>
 
                     <span>Select Superpowers:</span>
                     <input type="checkbox" id="opt6" name="str" class="suppwrs" checked>
@@ -80,9 +75,7 @@
             <button id="submit-button">Send Request</button>
         </main>
 
-        <div id="result">
-            <p >Server Response: </p>
-        </div>
+        <div id="result" class="section-content"></div>
 
         <script src="index.js"></script>
     </body>
